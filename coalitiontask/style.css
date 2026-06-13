@@ -1,0 +1,94 @@
+:root {
+    --bg-main: #F6F7F8;
+    --card-white: #FFFFFF;
+    --text-dark: #07263E;
+    --text-muted: #707070;
+    --active-teal: #01F0D0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-white);
+    padding: 16px 32px;
+    border-radius: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin: 0 20px;
+    padding: 8px 16px;
+}
+
+.nav-links a.active {
+    background-color: var(--active-teal);
+    border-radius: 32px;
+    font-weight: bold;
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    gap: 32px;
+    margin-top: 32px;
+}
+
+aside, section, .diagnostic-section, .labs-section {
+    background: var(--card-white);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.patient-item.active {
+    background-color: #D8FCF7;
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.patient-item img { border-radius: 50%; }
+
+.chart-card {
+    background-color: #F4F0FA;
+    border-radius: 16px;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+}
+
+.vitals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 21px;
+    margin-top: 20px;
+}
+
+.vital-card { border-radius: 12px; padding: 16px; }
+.respiration { background-color: #E0F3FA; }
+.temperature { background-color: #FFE6E9; }
+.heart { background-color: #FFE6F1; }
+
+.diagnostic-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+.diagnostic-table th { background-color: #F6F7F8; padding: 12px; text-align: left; }
+.diagnostic-table td { padding: 16px 12px; border-bottom: 1px solid #F6F7F8; }
+
+.lab-list { list-style: none; padding: 0; }
+.lab-list li { display: flex; justify-content: space-between; padding: 12px; }

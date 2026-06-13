@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech.Care Patient Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js Library -->
+    <script src="https://jsdelivr.net"></script>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="logo"><strong>Tech</strong>.Care</div>
+        <nav class="nav-links">
+            <a href="#">Overview</a>
+            <a href="#" class="active">Patients</a>
+            <a href="#">Schedule</a>
+            <a href="#">Message</a>
+            <a href="#">Transactions</a>
+        </nav>
+        <div class="user-profile">
+            <span><strong>Dr. Jose Simmons</strong><br><small>General Practitioner</small></span>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Container Grid -->
+    <main class="dashboard-container">
+        
+        <!-- Left Sidebar: Patient Entry -->
+        <aside class="sidebar-left">
+            <h3>Patients</h3>
+            <div class="patient-item active">
+                <img src="" id="sidebar-avatar" alt="Jessica" width="40" height="40">
+                <div>
+                    <h4 id="sidebar-name">Loading...</h4>
+                    <p id="sidebar-gender-age">Loading...</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center Main Stream -->
+        <section class="main-content">
+            <div class="diagnosis-history-card">
+                <h2>Diagnosis History</h2>
+                
+                <!-- Chart Box Block -->
+                <div class="chart-card">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Blood Pressure</h3>
+                            <span>Last 6 months ▾</span>
+                        </div>
+                        <canvas id="bpChart"></canvas>
+                    </div>
+                    
+                    <!-- Side Numbers Content Column -->
+                    <div class="chart-stats">
+                        <div class="stat-group">
+                            <span class="dot systolic-dot"></span><strong>Systolic</strong>
+                            <h2 id="systolic-val">--</h2>
+                            <p id="systolic-status">--</p>
+                        </div>
+                        <hr>
+                        <div class="stat-group">
+                            <span class="dot diastolic-dot"></span><strong>Diastolic</strong>
+                            <h2 id="diastolic-val">--</h2>
+                            <p id="diastolic-status">--</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vitals Grid Blocks -->
+            <div class="vitals-grid">
+                <div class="vital-card respiration">
+                    <p>Respiratory Rate</p>
+                    <h2 id="resp-rate">-- bpm</h2>
+                    <span id="resp-status">--</span>
+                </div>
+                <div class="vital-card temperature">
+                    <p>Temperature</p>
+                    <h2 id="temp-rate">-- °F</h2>
+                    <span id="temp-status">--</span>
+                </div>
+                <div class="vital-card heart">
+                    <p>Heart Rate</p>
+                    <h2 id="heart-rate">-- bpm</h2>
+                    <span id="heart-status">--</span>
+                </div>
+            </div>
+
+            <!-- Diagnostic List Section -->
+            <div class="diagnostic-section">
+                <h3 class="section-title">Diagnostic List</h3>
+                <table class="diagnostic-table">
+                    <thead>
+                        <tr>
+                            <th>Problem / Diagnosis</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="diagnostic-tbody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Right Side: Details View -->
+        <aside class="sidebar-right">
+            <div class="profile-header">
+                <img src="" id="patient-photo" alt="Jessica Taylor" width="120" height="120">
+                <h2 id="patient-name">Jessica Taylor</h2>
+            </div>
+            <div class="profile-details">
+                <div class="detail-item"><p><strong>Date Of Birth</strong><br><span id="dob">--</span></p></div>
+                <div class="detail-item"><p><strong>Gender</strong><br><span id="gender">--</span></p></div>
+                <div class="detail-item"><p><strong>Contact Info.</strong><br><span id="phone">--</span></p></div>
+                <div class="detail-item"><p><strong>Insurance Provider</strong><br><span id="insurance">--</span></p></div>
+            </div>
+            <div class="labs-section">
+                <h3 class="section-title">Lab Results</h3>
+                <ul id="lab-results-list" class="lab-list"></ul>
+            </div>
+        </aside>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
